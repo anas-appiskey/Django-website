@@ -71,7 +71,20 @@ Answer)A project can contain multiple app and an app can be in multiple projects
 10. create the superuser and start the development server
 11. register the models in admin.py file to add these in panel
 12. add three new views in views.py file and add urlpatterns in urls.py file in polls
+13. now we are separating the django files from html file create a file name index.html
+     ```
+      django-website
+            |___mysite
+            |___polls
+               |__migrations
+               |___templates
+                  |___polls 
+                     |___index.html            
+     ```
+     and the rest of files will also be there , it is only to show you where to place the index.html file. Note the templates folder name is **case sensitive**
 
+     shift+cntl+V 
+    
 
 
 
