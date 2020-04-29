@@ -9,8 +9,8 @@ from .models import Question
 
 #this function will display whatever in the index()
 def index(request):
-    latest_question_lists = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.question_text for q in latest_question_lists])
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
     return HttpResponse(output)
 
 #in this case the id is the PK
