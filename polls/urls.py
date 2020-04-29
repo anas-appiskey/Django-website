@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-appname = 'polls'
+app_name = 'polls'
 urlpatterns = [
     #it displays the views file function index 
    # the 'name' value as called by the {% url %} template tag
