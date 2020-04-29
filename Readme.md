@@ -84,7 +84,9 @@ Answer)A project can contain multiple app and an app can be in multiple projects
      and the rest of files will also be there , it is only to show you where to place the index.html file. Note the templates folder name is **case sensitive**
 
      shift+cntl+V 
-    
+14. The above template displays a radio button for each question choice. The value of each radio button is the associated question choice’s ID. The name of each radio button is "choice". That means, when somebody selects one of the radio buttons and submits the form, it’ll send the POST data choice=# where # is the ID of the selected choice. This is the basic concept of HTML forms.
+15. forloop.counter indicates how many times the for tag has gone through its loop
+16. Since we’re creating a POST form (which can have the effect of modifying data), we need to worry about Cross Site Request Forgeries. Thankfully, you don’t have to worry too hard, because Django comes with a helpful system for protecting against it. In short, all POST forms that are targeted at internal URLs should use the {% csrf_token %} template tag.
 
 
 
