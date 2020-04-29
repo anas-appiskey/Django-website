@@ -13,6 +13,7 @@ def index(request):
     
     #this context pass the variable latest_qstn_list to the template 
     # index.html file throught render 
+    #the thing we are accessing is the context dict key 
     context = {
         'latest_question_list' : latest_question_list,
     }
