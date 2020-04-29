@@ -22,7 +22,7 @@ def index(request):
 #in this case the id is the PK
 def details(request, question_id):
     try:
-        Question = Question.objets.get(pk = question_id)
+        question = Question.objects.get(pk = question_id)
     except Question.DoesNotExists:
         raise Http404("question does not match")
     return HttpResponse("you are looking at question %s." %question_id)
