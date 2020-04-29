@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse , Http404
 
 from .models import Question
 # Create your views here.
@@ -21,6 +21,10 @@ def index(request):
 
 #in this case the id is the PK
 def details(request, question_id):
+    try:
+        Question = Question.objets.get(pk = question_id)
+    except Question.DoesNotExists:
+        raise Http404("question does not match")
     return HttpResponse("you are looking at question %s." %question_id)
 
 def results(request, question_id):
