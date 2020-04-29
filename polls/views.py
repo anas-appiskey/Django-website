@@ -27,7 +27,6 @@ def details(request, question_id):
     #     raise Http404("question does not match")
    
     question = get_object_or_404(Question ,pk = question_id)
-
     return render(request , 'polls/details.html', {'question': question})
 
 def results(request, question_id):
