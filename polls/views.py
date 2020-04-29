@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
 
 from .models import Question
 # Create your views here.
@@ -11,11 +10,13 @@ from .models import Question
 #this function will display whatever in the index()
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    template = loader.get_template('polls/index.html')
+    
+    #this context pass the variable latest_qstn_list to the template 
+    # index.html file throught render 
     context = {
         'latest_question_list' : latest_question_list,
     }
-    return HttpResponse(template.render(context, request))
+    return render(request ,'polls/index.html', context)
 
 #in this case the id is the PK
 def details(request, question_id):
