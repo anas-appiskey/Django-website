@@ -14,6 +14,7 @@ class IndexView(generic.ListView):
     
     template_name = 'polls/index.html'
     #you can change this question_list by using this variable
+    
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
