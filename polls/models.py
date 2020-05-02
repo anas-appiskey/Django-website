@@ -19,7 +19,7 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    # This is a foreign key and django is handeling the PK itself
+    # This is a foreign key and django is handling the PK itself
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
